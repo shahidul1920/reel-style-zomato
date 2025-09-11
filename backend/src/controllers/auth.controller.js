@@ -23,7 +23,7 @@ async function registerUser(req, res) {
     })
     const token = jwt.sign({
         id: user._id,
-    }, '1900ss123')
+    }, process.env.JWT_SECRET)
 
     res.cookie("token", token)
 
@@ -57,7 +57,7 @@ async function loginUser(req, res){
     }
     const token = jwt.sign({
         id: user._id,
-    }, "1900ss123")
+    }, process.env.JWT_SECRET)
 
     res.cookie("token", token)
     res.status(200).json({
