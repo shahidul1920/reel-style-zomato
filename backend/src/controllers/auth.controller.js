@@ -53,10 +53,20 @@ async function loginUser(req, res){
     if(!ispassValid){
         return res.status(400).json({
             message: "invalid user or password"
-        }, "1900ss123")
+        })
     }
     const token = jwt.sign({
         id: user._id,
+    }, "1900ss123")
+
+    res.cookie("token", token)
+    res.status(200).json({
+        message: "user login successfully",
+        user: {
+            _id: user._id,
+            email: user.email,
+            fullName: user.fullName
+        }
     })
 }
 
@@ -64,4 +74,5 @@ async function loginUser(req, res){
 
 module.exports = {
     registerUser,
+    loginUser
 }
