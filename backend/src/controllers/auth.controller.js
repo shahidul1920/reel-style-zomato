@@ -89,7 +89,27 @@ async function foodpartnerRegister(req, res){
             message: "Partner already exist"
         })
     }
-    const hassedPass = await bcrypt.hash(password, 10)
+    const hassedPass = await bcrypt.hash(password, 10);
+
+    const partner = await foodPartnerModel.create({
+        name,
+        email,
+        password: hassedPass
+    })
+    const token = jwt.sign({
+        id:partner._id,
+    }, process.env.JWT_SECRET)
+
+    res.cookie('token', token)
+
+    res.status(201).json({
+        message:'Pertner registered',
+        user:{
+            _id: partner._id,
+            email: partner.email,
+            name: partner.name
+        }
+    })
     
 }
 
@@ -97,5 +117,6 @@ async function foodpartnerRegister(req, res){
 module.exports = {
     registerUser,
     loginUser,
-    logoutUser
+    logoutUser,
+    foodpartnerRegister
 }
