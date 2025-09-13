@@ -1,6 +1,7 @@
 const userModel = require('../models/user.model')
 const bcrypt = require('bcryptjs')
-const jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken');
+const foodPartnerModel = require('../models/foodpartner.model');
 
 async function registerUser(req, res) {
     const {fullName, email, password} = req.body;
@@ -77,6 +78,20 @@ function logoutUser(req, res){
     })
 }
 
+async function foodpartnerRegister(req, res){
+    const {name, email, password} = req.body;
+
+    isParterExist = await foodPartnerModel.findOne({
+        email
+    })
+    if(isParterExist){
+        return res.status(400).json({
+            message: "Partner already exist"
+        })
+    }
+    const hassedPass = await bcrypt.hash(password, 10)
+    
+}
 
 
 module.exports = {
