@@ -124,6 +124,24 @@ async function loginPartner(req, res) {
             message: 'User not found'
         })
     }
+    const ispassValid = await bcrypt.compare(password, user.password)
+    if(!ispassValid){
+        return res.status(400).json({
+            message: 'User or pass not valid'
+        })
+    }
+    const token = jwt.sign({
+        id: user._id
+    }, process.env.JWT_SECRET)
+    res.cookie('token', token);
+    res.status(200).json({
+        message: "welcum",
+        user:{
+            _id: user._id,
+            email: user.email,
+            name: user.name
+        }
+    })
 }
 
 
@@ -131,5 +149,6 @@ module.exports = {
     registerUser,
     loginUser,
     logoutUser,
-    foodpartnerRegister
+    foodpartnerRegister,
+    loginPartner
 }
