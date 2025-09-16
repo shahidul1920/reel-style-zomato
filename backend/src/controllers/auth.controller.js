@@ -81,7 +81,7 @@ function logoutUser(req, res){
 async function foodpartnerRegister(req, res){
     const {name, email, password} = req.body;
 
-    isParterExist = await foodPartnerModel.findOne({
+    const isParterExist = await foodPartnerModel.findOne({
         email
     })
     if(isParterExist){
@@ -111,6 +111,19 @@ async function foodpartnerRegister(req, res){
         }
     })
     
+}
+
+async function loginPartner(req, res) {
+    const {email, password} = req.body;
+
+    const user = await foodPartnerModel.findOne({
+        email
+    })
+    if(!user){
+        return res.status(400).json({
+            message: 'User not found'
+        })
+    }
 }
 
 
