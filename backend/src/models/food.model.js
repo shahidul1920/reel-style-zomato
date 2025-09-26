@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const foodPartnerModel = require('./foodpartner.model');
+//const foodPartnerModel = require('./foodpartner.model');
 
 const foodSchema = new mongoose.Schema({
     name: {
@@ -18,3 +18,8 @@ const foodSchema = new mongoose.Schema({
         ref: 'foodpartner'
     }
 })
+
+const foodModel = mongoose.model('food', foodSchema);
+
+module.exports = foodModel
+
