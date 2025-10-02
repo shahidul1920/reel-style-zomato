@@ -11,7 +11,11 @@ async  function authfoodPartnerMiddleware(req, res, next){
     }
     try{
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        console.log(decoded.id);
+        
         const foodPartner = await foodPartnerModel.findById(decoded.id);
+        console.log(foodPartner);
+        
         req.foodPartner = foodPartner
 
         next()
