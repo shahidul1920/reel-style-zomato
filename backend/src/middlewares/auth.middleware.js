@@ -39,7 +39,7 @@ const authUserMiddleware = async (req, res, next)=>{
         const decoded = jwt.varify(token, process.env.JWT_SECRET);
         const currentUser = await userModel.findById(decoded);
 
-        const user = currentUser
+        req.user = currentUser
         next()
     }catch(err){
         return res.status(401).json({
@@ -48,5 +48,6 @@ const authUserMiddleware = async (req, res, next)=>{
     }
 }
 module.exports = {
-    authfoodPartnerMiddleware
+    authfoodPartnerMiddleware,
+    authUserMiddleware
 }
