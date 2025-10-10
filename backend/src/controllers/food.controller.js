@@ -12,7 +12,7 @@ async function createFood(req, res) {
     })
     res.status(201).json({
         message: 'video uploaded',
-        foodItems
+        food: foodItems
     })
 }
 
