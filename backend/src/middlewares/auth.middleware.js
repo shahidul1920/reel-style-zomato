@@ -34,13 +34,15 @@ const authUserMiddleware = async (req, res, next)=>{
         return res.status(401).json({
             message: "Something went wrong, please try login"
         })
-    }
+    }    
     try{
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
-        const currentUser = await userModel.findById(decoded);
-        console.log(currentUser);
+        const currentUser = await userModel.findById(decoded.id);
+        console.log(decoded);
         
         req.user = currentUser
+        console.log(res.user);
+        
         next()
     }catch(err){
         return res.status(401).json({
