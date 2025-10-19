@@ -15,7 +15,7 @@ export const PartnerRegister = () => {
           <form className="space-y-6">
             <div className="grid gap-6 md:grid-cols-2">
               <label className="flex flex-col gap-2">
-                <span className="text-sm font-medium text-slate-600 dark:text-slate-300">Business name</span>
+                <span className="text-sm font-medium text-slate-600 dark:text-slate-300 flex">Business name <p className='text-red-700'>*</p></span>
                 <input
                   type="text"
                   placeholder="Reel Style Kitchen"
@@ -24,7 +24,7 @@ export const PartnerRegister = () => {
               </label>
 
               <label className="flex flex-col gap-2">
-                <span className="text-sm font-medium text-slate-600 dark:text-slate-300">Business email</span>
+                <span className="text-sm font-medium text-slate-600 dark:text-slate-300 flex">Business email <p className='text-red-700'>*</p></span>
                 <input
                   type="email"
                   placeholder="contact@yourkitchen.com"
@@ -83,7 +83,7 @@ export const PartnerRegister = () => {
             </div>
 
             <label className="flex flex-col gap-2">
-              <span className="text-sm font-medium text-slate-600 dark:text-slate-300">Password</span>
+              <span className="text-sm font-medium text-slate-600 dark:text-slate-300 flex">Password <p className='text-red-700'>*</p></span>
               <input
                 type="password"
                 placeholder="Create a secure password"

@@ -32,13 +32,13 @@ export const PartnerLogin = () => {
             </label>
 
             <div className="flex items-center justify-between text-sm">
-              <label className="flex items-center gap-3">
+              {/* <label className="flex items-center gap-3">
                 <input
                   type="checkbox"
                   className="h-4 w-4 rounded border-slate-300 text-slate-900 focus:ring-slate-400 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-200 dark:focus:ring-slate-700"
                 />
                 <span className="text-slate-500 dark:text-slate-400">Remember me</span>
-              </label>
+              </label> */}
               <Link to="/support" className="font-semibold text-slate-900 underline-offset-4 transition hover:underline dark:text-slate-200">
                 Need help?
               </Link>
