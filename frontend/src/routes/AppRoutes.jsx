@@ -5,6 +5,7 @@ import { UserLogin } from '../pages/user/UserLogin'
 import { PartnerRegister } from '../pages/partner/PartnerRegister'
 import { PartnerLogin } from '../pages/partner/PartnerLogin'
 import Header from '../components/Header'
+import { Home } from '../pages/home/Home'
 
 export const AppRoutes = () => {
   return (
@@ -15,6 +16,7 @@ export const AppRoutes = () => {
             <Route path='/user/login' element={<UserLogin />} />
             <Route path='/food-partner/register' element={<PartnerRegister />} />
             <Route path='/food-partner/login' element={<PartnerLogin />} />
+            <Route path='/home' element={<Home />} />
         </Routes>
     </Router>
   )
