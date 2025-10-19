@@ -1,0 +1,233 @@
+[33mcommit b96e57585b33e9c7f753005dcce922298de2c06a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Shahidul Islam <89517917+shahidul1920@users.noreply.github.com>
+Date:   Sun Oct 19 01:47:14 2025 +0600
+
+    Add React Router and initial route setup
+    
+    Integrated react-router-dom into the project and created AppRoutes component with a sample '/user/res' route. Updated App.jsx to use AppRoutes for routing.
+
+[33mcommit 3185be058077d2647dd68f8425341ffe9d33f998[m
+Author: Shahidul Islam <89517917+shahidul1920@users.noreply.github.com>
+Date:   Sun Oct 12 00:05:00 2025 +0600
+
+    Initialize React frontend with Vite setup
+    
+    Set up a new React project using Vite, including initial configuration files, ESLint setup, basic App component, and supporting assets. This provides a minimal development environment with linting and hot module replacement.
+
+[33mcommit c1dbc2b501eccd80003d278cbac05d896ecc8fb1[m
+Author: Shahidul Islam <89517917+shahidul1920@users.noreply.github.com>
+Date:   Sat Oct 11 23:32:44 2025 +0600
+
+    backend finishing
+
+[33mcommit c6e0709d8c8837d378b8a32c7bbeedaf9ee09501[m
+Author: Shahidul Islam <89517917+shahidul1920@users.noreply.github.com>
+Date:   Sat Oct 11 23:13:32 2025 +0600
+
+    Fix user lookup in auth middleware
+    
+    Corrects the user lookup by using decoded.id instead of passing the entire decoded object to findById. Also updates console logging for better debugging.
+
+[33mcommit 717211ab2338619b32b66e3f711e0245acfed5f6[m
+Author: Shahidul Islam <89517917+shahidul1920@users.noreply.github.com>
+Date:   Sat Oct 11 22:59:52 2025 +0600
+
+    Add endpoint to fetch all food items
+    
+    Introduces a new GET / route in food.routes.js to fetch all food items, protected by user authentication. Implements getFoodItems controller and fixes a typo in jwt.verify in the auth middleware.
+
+[33mcommit e093da507c7a9a24f4cc014ee0b6ebd076fbf860[m
+Author: Shahidul Islam <89517917+shahidul1920@users.noreply.github.com>
+Date:   Sat Oct 11 00:58:50 2025 +0600
+
+    Add and export authUserMiddleware
+
+[33mcommit f96afc02da57ec8050df3a2cc86b4131fb6a05e4[m
+Author: Shahidul Islam <89517917+shahidul1920@users.noreply.github.com>
+Date:   Sat Oct 11 00:57:01 2025 +0600
+
+    Add auth middleware for user authentication
+    
+    Introduced authUserMiddleware to authenticate users using JWT tokens and user model. This complements the existing food partner authentication middleware.
+
+[33mcommit 63b0fb2d7b6b94e6f35374d4ad8e52146e1b03a6[m
+Author: Shahidul Islam <89517917+shahidul1920@users.noreply.github.com>
+Date:   Fri Oct 10 23:35:50 2025 +0600
+
+    small fix
+
+[33mcommit 68e5f142c514e26aec56fa5d0187619b625a31c2[m
+Author: Shahidul Islam <89517917+shahidul1920@users.noreply.github.com>
+Date:   Wed Oct 8 23:32:48 2025 +0600
+
+    Add debug logs to auth middleware and fix route spacing
+    
+    Added console logs for decodedId and foodPartner in the authfoodPartnerMiddleware for debugging purposes. Also fixed spacing in the food creation route definition.
+
+[33mcommit 52378905b90a5f5c54b639f88a0d99bc73ece2eb[m
+Author: Shahidul Islam <89517917+shahidul1920@users.noreply.github.com>
+Date:   Wed Oct 8 21:26:33 2025 +0600
+
+    video uploader function
+
+[33mcommit f72016e5c70897b03ffc4852c6d0cd29b3add1fa[m
+Author: Shahidul Islam <89517917+shahidul1920@users.noreply.github.com>
+Date:   Sun Oct 5 22:59:49 2025 +0600
+
+    imagekit tested
+
+[33mcommit 808564eaac872de49b8fe4be187863d7f42ef7cf[m
+Author: Shahidul Islam <89517917+shahidul1920@users.noreply.github.com>
+Date:   Sun Oct 5 14:44:25 2025 +0600
+
+    imagekit setup
+
+[33mcommit 261b7f7925e97db40a69dcfcf3a7bba00ee2ce4b[m
+Author: Shahidul Islam <89517917+shahidul1920@users.noreply.github.com>
+Date:   Fri Oct 3 20:31:39 2025 +0600
+
+    multer
+
+[33mcommit e62655ae712f2c82476218d0b35409a08f8b1693[m
+Author: Shahidul Islam <89517917+shahidul1920@users.noreply.github.com>
+Date:   Fri Oct 3 02:22:49 2025 +0600
+
+    solved after a long re-organizing my brain cells
+
+[33mcommit 4707f587155ffdf4b4436449bd986924822c65d6[m
+Author: Shahidul Islam <89517917+shahidul1920@users.noreply.github.com>
+Date:   Fri Oct 3 02:00:28 2025 +0600
+
+    food route and controller with err
+
+[33mcommit 30765299d7d74ff3248f8b65ef2355c79b235f0d[m
+Author: Shahidul Islam <89517917+shahidul1920@users.noreply.github.com>
+Date:   Fri Oct 3 01:07:26 2025 +0600
+
+    food miidleware
+
+[33mcommit 25a21974eed5e951e9ebf3fae01587ce66c90f42[m
+Author: Shahidul Islam <89517917+shahidul1920@users.noreply.github.com>
+Date:   Thu Oct 2 13:57:47 2025 +0600
+
+    debugging
+
+[33mcommit 7a561c2444a436f1e04a078177a888d37270a643[m
+Author: Shahidul Islam <shahidul13@uttarauniversity.edu.bd>
+Date:   Sat Sep 27 00:29:16 2025 +0600
+
+    auth middleware
+
+[33mcommit 6c0b065a28a46bc12d413d7c19e1d1ca7bbf5dcb[m
+Author: Shahidul Islam <shahidul13@uttarauniversity.edu.bd>
+Date:   Fri Sep 26 20:32:14 2025 +0600
+
+    foodvid up model
+
+[33mcommit 5fcbcadace0e6ba8d2faa376aa607605ba9d9cf9[m
+Author: Shahidul Islam <shahidul13@uttarauniversity.edu.bd>
+Date:   Fri Sep 19 20:06:40 2025 +0600
+
+    food up model
+
+[33mcommit c5a35cbcb65723c95cca43d5ef39e63f14d7babb[m
+Author: Shahidul Islam <shahidul13@uttarauniversity.edu.bd>
+Date:   Wed Sep 17 00:49:20 2025 +0600
+
+    partner login done
+
+[33mcommit 9a8b2a67cc5757241766fca73f60cb156d1320c5[m
+Author: Shahidul Islam <shahidul13@uttarauniversity.edu.bd>
+Date:   Tue Sep 16 23:43:57 2025 +0600
+
+    login partner
+
+[33mcommit 52b8c73ac5d717440d1e3f8597ca19a9b50e346e[m
+Author: Shahidul Islam <shahidul13@uttarauniversity.edu.bd>
+Date:   Sun Sep 14 01:03:09 2025 +0600
+
+    partner resigtration complt
+
+[33mcommit 854093cecbdc07bf23e9c782d91d100c13378fab[m
+Author: Shahidul Islam <shahidul13@uttarauniversity.edu.bd>
+Date:   Sat Sep 13 23:46:34 2025 +0600
+
+    partner account creation
+
+[33mcommit 901d41390e332dee8a4b0fe67e78c5cf9619da72[m
+Author: Shahidul Islam <shahidul13@uttarauniversity.edu.bd>
+Date:   Fri Sep 12 22:10:40 2025 +0600
+
+    foodpartner model
+
+[33mcommit a9cfa76a6033eba1f74499ef82e8e699df1fed99[m
+Author: Shahidul Islam <shahidul13@uttarauniversity.edu.bd>
+Date:   Fri Sep 12 20:25:27 2025 +0600
+
+    bug end game
+
+[33mcommit b5da41fcbc4d2c9fec89c692609bef71e33e1043[m
+Author: Shahidul Islam <shahidul13@uttarauniversity.edu.bd>
+Date:   Fri Sep 12 01:37:15 2025 +0600
+
+    damn you error
+
+[33mcommit 730803e4254865c316c4a1279f8ad86023f74b1c[m
+Author: Shahidul Islam <shahidul13@uttarauniversity.edu.bd>
+Date:   Fri Sep 12 01:06:31 2025 +0600
+
+    mongo tokens secureing
+
+[33mcommit 351d55e12fce427bd54f94fd0fd549c069d18353[m
+Author: Shahidul Islam <shahidul13@uttarauniversity.edu.bd>
+Date:   Fri Sep 12 01:02:13 2025 +0600
+
+    env setup
+
+[33mcommit 6caafda81c2ea5487121e5ed0d116b636b961237[m
+Author: Shahidul Islam <shahidul13@uttarauniversity.edu.bd>
+Date:   Fri Sep 12 00:23:08 2025 +0600
+
+    user login api
+
+[33mcommit 7ad86c0d63d28348e73abd31c233b319b802984a[m
+Author: Shahidul Islam <shahidul13@uttarauniversity.edu.bd>
+Date:   Fri Sep 12 00:17:00 2025 +0600
+
+    login token
+
+[33mcommit 88b98a9b0f842ec5d7baef60344f0199aeccad7e[m
+Author: Shahidul Islam <shahidul13@uttarauniversity.edu.bd>
+Date:   Thu Sep 11 23:53:05 2025 +0600
+
+    user check
+
+[33mcommit a62a68df4e44ee0b3365ec634d3e3ad4eea3629a[m
+Author: Shahidul Islam <shahidul13@uttarauniversity.edu.bd>
+Date:   Wed Sep 10 00:40:27 2025 +0600
+
+    tiny
+
+[33mcommit cf83091497326a5c6ebda04eaf33ff183699a3e2[m
+Author: Shahidul Islam <shahidul13@uttarauniversity.edu.bd>
+Date:   Tue Sep 9 20:50:58 2025 +0600
+
+    token and cookie
+
+[33mcommit 1d2a3c667b17c87523cc1e5f53736fe095a44de6[m
+Author: Shahidul Islam <shahidul13@uttarauniversity.edu.bd>
+Date:   Tue Sep 9 00:45:21 2025 +0600
+
+    hashing
+
+[33mcommit 2a526a83af044b88a09e7a2f6a6c4262867e401f[m
+Author: Shahidul Islam <shahidul13@uttarauniversity.edu.bd>
+Date:   Tue Sep 9 00:24:56 2025 +0600
+
+    wierd bug fix, i don't even know what it was
+
+[33mcommit c5a459883c71c080a54a604f0c30b4334a5a73e6[m
+Author: Shahidul Islam <shahidul13@uttarauniversity.edu.bd>
+Date:   Mon Sep 8 23:42:07 2025 +0600
+
+    user m
