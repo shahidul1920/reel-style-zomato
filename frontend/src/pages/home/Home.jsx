@@ -56,7 +56,7 @@ export const Home = () => {
         </div>
 
         <div className="relative w-full max-w-lg">
-          <div className="pointer-events-none absolute inset-0 -translate-y-8 translate-x-4 rounded-3xl bg-gradient-to-tr from-slate-300/40 via-white/40 to-transparent blur-3xl dark:from-slate-800/50 dark:via-slate-900/40" />
+          <div className="pointer-events-none absolute inset-x-0 top-12 translate-x-4 rounded-3xl bg-gradient-to-tr from-slate-300/40 via-white/40 to-transparent blur-3xl dark:from-slate-800/50 dark:via-slate-900/40" />
           <div className="relative rounded-3xl border border-slate-200/70 bg-white/80 p-8 shadow-lg backdrop-blur dark:border-slate-800/60 dark:bg-slate-900/60">
             <div className="flex flex-col gap-6">
               <div>
