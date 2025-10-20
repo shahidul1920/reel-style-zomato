@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom'
 
 const Header = () => {
 	return (
-		<header className="sticky top-0 z-40 backdrop-blur bg-white/80 dark:bg-slate-900/70 border-b border-slate-200/70 dark:border-slate-800/70">
+		<header className="sticky top-0 z-40 backdrop-blur dark:bg-slate-900/70 border-b border-slate-200/70 dark:border-slate-800/70 bg-transparent">
 			<div className="mx-auto max-w-6xl px-4">
 				<div className="h-14 flex items-center justify-between">
 					{/* Brand */}
