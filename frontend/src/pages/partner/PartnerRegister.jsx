@@ -1,7 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios';
+
 
 export const PartnerRegister = () => {
+  const partnerRegister = (e)=>{
+    e.preventDefault();
+  }
   return (
     <main className="min-h-screen bg-slate-100 text-slate-900 transition-colors dark:bg-slate-950 dark:text-slate-100">
       <div className="mx-auto flex w-full max-w-3xl flex-col justify-center px-6 py-16">
@@ -92,6 +97,7 @@ export const PartnerRegister = () => {
             </label>
 
             <button
+              onSubmit={()=>(partnerRegister())}
               type="submit"
               className="w-full rounded-2xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-300 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white dark:focus:ring-slate-600"
             >
