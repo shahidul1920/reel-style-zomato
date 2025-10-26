@@ -33,15 +33,15 @@ export const PartnerRegister = () => {
               </label>
             </div>
 
-            <div className="grid gap-6 md:grid-cols-2">
-              <label className="flex flex-col gap-2">
+            <div className="grid">
+              {/* <label className="flex flex-col gap-2">
                 <span className="text-sm font-medium text-slate-600 dark:text-slate-300">Contact person</span>
                 <input
                   type="text"
                   placeholder="Jane Doe"
                   className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-slate-400 focus:ring-2 focus:ring-slate-200 dark:border-slate-700 dark:bg-slate-900 dark:focus:border-slate-500 dark:focus:ring-slate-800"
                 />
-              </label>
+              </label> */}
 
               <label className="flex flex-col gap-2">
                 <span className="text-sm font-medium text-slate-600 dark:text-slate-300">Phone number</span>
@@ -62,15 +62,15 @@ export const PartnerRegister = () => {
               />
             </label>
 
-            <div className="grid gap-6 md:grid-cols-2">
-              <label className="flex flex-col gap-2">
+            <div className="grid">
+              {/* <label className="flex flex-col gap-2">
                 <span className="text-sm font-medium text-slate-600 dark:text-slate-300">Cuisine focus</span>
                 <input
                   type="text"
                   placeholder="Fusion, Vegan, Desserts..."
                   className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-slate-400 focus:ring-2 focus:ring-slate-200 dark:border-slate-700 dark:bg-slate-900 dark:focus:border-slate-500 dark:focus:ring-slate-800"
                 />
-              </label>
+              </label> */}
 
               <label className="flex flex-col gap-2">
                 <span className="text-sm font-medium text-slate-600 dark:text-slate-300">Website or menu link</span>
@@ -92,7 +92,7 @@ export const PartnerRegister = () => {
             </label>
 
             <button
-              type="button"
+              type="submit"
               className="w-full rounded-2xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-300 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white dark:focus:ring-slate-600"
             >
               Submit application
