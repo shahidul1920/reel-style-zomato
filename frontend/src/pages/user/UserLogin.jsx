@@ -19,7 +19,7 @@ export const UserLogin = () => {
       withCredentials: true
     })
     console.log(response.data);
-    navigate("/home")
+    navigate("/reel")
   }
 
 

@@ -20,7 +20,7 @@ export const UserRegister = () => {
     withCredentials:true
   })
     console.log(response.data);
-    navigate('/home')
+    navigate('/reel')
         
   }
   return (
