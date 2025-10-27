@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 
 const SAMPLE_REELS = [
   {
@@ -22,20 +22,58 @@ const SAMPLE_REELS = [
 ]
 
 export default function Reels() {
+  const containerRef = useRef(null)
+  const sectionRefs = useRef([])
+  const videoRefs = useRef([])
+
+  useEffect(() => {
+    const root = containerRef.current || null
+    const options = { root, threshold: 0.65 }
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const idx = Number(entry.target.dataset.index)
+        const vid = videoRefs.current[idx]
+        if (!vid) return
+
+        if (entry.isIntersecting) {
+          try {
+            vid.currentTime = 0
+            void vid.play()
+          } catch (e) {
+            /* ignore play errors */
+          }
+        } else {
+          try {
+            vid.pause()
+            vid.currentTime = 0
+          } catch (e) {
+            /* ignore */
+          }
+        }
+      })
+    }, options)
+
+    sectionRefs.current.forEach((el) => {
+      if (el) obs.observe(el)
+    })
+
+    return () => obs.disconnect()
+  }, [])
+
   return (
-    <div className="h-screen snap-y snap-mandatory overflow-y-auto scroll-smooth touch-pan-y bg-black">
-      {SAMPLE_REELS.map((item) => (
-        <section key={item.id} className="relative h-screen snap-start flex items-center justify-center">
+    <div ref={containerRef} className="h-screen snap-y snap-mandatory overflow-y-auto scroll-smooth touch-pan-y bg-black">
+      {SAMPLE_REELS.map((item, idx) => (
+        <section key={item.id} data-index={idx} ref={(el) => (sectionRefs.current[idx] = el)} className="relative h-screen snap-start flex items-center justify-center">
           {/* Reel card: portrait on desktop, full-screen on small screens */}
           <div className="snap-center flex-shrink-0 w-full md:w-[420px] md:h-[85vh] h-full max-w-[420px] rounded-2xl overflow-hidden bg-black relative">
             {/* Video element: fills the card */}
             <video
+              ref={(el) => (videoRefs.current[idx] = el)}
               src={item.src}
               className="absolute inset-0 h-full w-full object-cover"
               playsInline
               muted
               loop
-              autoPlay
             />
 
             {/* gradient to help text contrast */}
