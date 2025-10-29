@@ -33,8 +33,8 @@ export default function Reels() {
     const options = { root, threshold: 0.65 }
     const obs = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        const idx = Number(entry.target.dataset.index)
-        const vid = videoRefs.current[idx]
+        const _id = Number(entry.target.dataset.index)
+        const vid = videoRefs.current[_id]
         if (!vid) return
 
         if (entry.isIntersecting) {
@@ -63,22 +63,25 @@ export default function Reels() {
   }, [])
 
   useEffect(()=>{
-    axios.get("")
+    axios.get("http://localhost:3000/api/food/", {withCredentials:true})
     .then(response=>{
       setVideos(response.data.foodItems)
     })
   })
 
+  console.log(videos);
+  
+
   return (
     <div ref={containerRef} className="h-screen snap-y snap-mandatory overflow-y-auto scroll-smooth touch-pan-y bg-black">
-      {videos.map((item, idx) => (
-        <section key={item.id} data-index={idx} ref={(el) => (sectionRefs.current[idx] = el)} className="relative h-screen snap-start flex items-center justify-center">
+      {videos.map((item, _id) => (
+        <section key={item._id} data-index={_id} ref={(el) => (sectionRefs.current[_id] = el)} className="relative h-screen snap-start flex items-center justify-center">
           {/* Reel card: portrait on desktop, full-screen on small screens */}
           <div className="snap-center flex-shrink-0 w-full md:w-[420px] md:h-[85vh] h-full max-w-[420px] rounded-2xl overflow-hidden bg-black relative">
             {/* Video element: fills the card */}
             <video
-              ref={(el) => (videoRefs.current[idx] = el)}
-              src={item.src}
+              ref={(el) => (videoRefs.current[_id] = el)}
+              src={item.video}
               className="absolute inset-0 h-full w-full object-cover"
               playsInline
               muted

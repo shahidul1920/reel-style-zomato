@@ -16,8 +16,7 @@ export const PartnerLogin = () => {
     },
   {
     withCredentials: true
-  }
-  )
+  })
   console.log(response.data);
   navigate("/reel")
   }
