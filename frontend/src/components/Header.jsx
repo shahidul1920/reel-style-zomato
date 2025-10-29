@@ -22,6 +22,13 @@ const Header = () => {
 						</NavLink>
 
 						<NavLink
+							to="/reel"
+							className={({ isActive }) => `px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100' : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'}`}
+						>
+							Shorts
+						</NavLink>
+
+						<NavLink
 							to="/support"
 							className={({ isActive }) => `px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100' : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'}`}
 						>
