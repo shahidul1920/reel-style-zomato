@@ -1,27 +1,29 @@
-import React, { useEffect, useRef } from 'react'
+import axios from 'axios'
+import React, { useEffect, useRef, useState } from 'react'
 
-const SAMPLE_REELS = [
-  {
-    id: 1,
-    src: 'https://ik.imagekit.io/u9480hgpk/86775774-0be8-4fd9-8075-5fd9d989fd9f_iQivdEwR2?updatedAt=1759944561839',
-    title: 'Spicy paneer platter — quick behind the scenes at Reel Style Kitchen',
-    store: '#',
-  },
-  {
-    id: 2,
-    src: 'https://ik.imagekit.io/u9480hgpk/86775774-0be8-4fd9-8075-5fd9d989fd9f_iQivdEwR2?updatedAt=1759944561839',
-    title: "Late-night desserts crafted fresh — don't miss today's special",
-    store: '#',
-  },
-  {
-    id: 3,
-    src: '',
-    title: 'Street-style chaat reimagined — bold flavours in every bite',
-    store: '#',
-  },
-]
+// const SAMPLE_REELS = [
+//   {
+//     id: 1,
+//     src: 'https://ik.imagekit.io/u9480hgpk/86775774-0be8-4fd9-8075-5fd9d989fd9f_iQivdEwR2?updatedAt=1759944561839',
+//     title: 'Spicy paneer platter — quick behind the scenes at Reel Style Kitchen',
+//     store: '#',
+//   },
+//   {
+//     id: 2,
+//     src: 'https://ik.imagekit.io/u9480hgpk/86775774-0be8-4fd9-8075-5fd9d989fd9f_iQivdEwR2?updatedAt=1759944561839',
+//     title: "Late-night desserts crafted fresh — don't miss today's special",
+//     store: '#',
+//   },
+//   {
+//     id: 3,
+//     src: '',
+//     title: 'Street-style chaat reimagined — bold flavours in every bite',
+//     store: '#',
+//   },
+// ]
 
 export default function Reels() {
+  const [videos, setVideos] = useState([])
   const containerRef = useRef(null)
   const sectionRefs = useRef([])
   const videoRefs = useRef([])
@@ -60,9 +62,16 @@ export default function Reels() {
     return () => obs.disconnect()
   }, [])
 
+  useEffect(()=>{
+    axios.get("")
+    .then(response=>{
+      setVideos(response.data.foodItems)
+    })
+  })
+
   return (
     <div ref={containerRef} className="h-screen snap-y snap-mandatory overflow-y-auto scroll-smooth touch-pan-y bg-black">
-      {SAMPLE_REELS.map((item, idx) => (
+      {videos.map((item, idx) => (
         <section key={item.id} data-index={idx} ref={(el) => (sectionRefs.current[idx] = el)} className="relative h-screen snap-start flex items-center justify-center">
           {/* Reel card: portrait on desktop, full-screen on small screens */}
           <div className="snap-center flex-shrink-0 w-full md:w-[420px] md:h-[85vh] h-full max-w-[420px] rounded-2xl overflow-hidden bg-black relative">
