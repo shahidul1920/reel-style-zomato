@@ -67,7 +67,7 @@ export default function Reels() {
     .then(response=>{
       setVideos(response.data.foodItems)
     })
-  })
+  },[])
 
   console.log(videos);
   
