@@ -16,7 +16,7 @@ export const PartnerRegister = () => {
     const address = targt.address.value;
     const webLink = targt.webLink.value;
 
-    const response = await axios.post("",{
+    const response = await axios.post("http://localhost:3000/api/auth/partner/register",{
       name,
       email,
       phone,
@@ -115,6 +115,7 @@ export const PartnerRegister = () => {
             <label className="flex flex-col gap-2">
               <span className="text-sm font-medium text-slate-600 dark:text-slate-300 flex">Password <p className='text-red-700'>*</p></span>
               <input
+              name='password'
                 type="password"
                 placeholder="Create a secure password"
                 className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-slate-400 focus:ring-2 focus:ring-slate-200 dark:border-slate-700 dark:bg-slate-900 dark:focus:border-slate-500 dark:focus:ring-slate-800"
