@@ -1,11 +1,31 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios';
 
 
 export const PartnerRegister = () => {
-  const partnerRegister = (e)=>{
+
+  const navigate = useNavigate()
+  const partnerRegister = async (e)=>{
     e.preventDefault();
+    const targt = e.target;
+    const name = targt.bName.value;
+    const email = targt.mail.value;
+    const password = targt.password.value;
+    const phone = targt.phone.value;
+    const address = targt.address.value;
+    const webLink = targt.webLink.value;
+
+    const response = await axios.post("",{
+      name,
+      email,
+      phone,
+      webLink,
+      address,
+      password
+    },{withCredentials:true})
+    console.log(response.data);
+    navigate("/foodpartner")
   }
   return (
     <main className="min-h-screen bg-slate-100 text-slate-900 transition-colors dark:bg-slate-950 dark:text-slate-100">
@@ -17,11 +37,12 @@ export const PartnerRegister = () => {
             <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">Tell us about your brand so diners can discover you.</p>
           </header>
 
-          <form className="space-y-6">
+          <form onSubmit={partnerRegister} className="space-y-6">
             <div className="grid gap-6 md:grid-cols-2">
               <label className="flex flex-col gap-2">
                 <span className="text-sm font-medium text-slate-600 dark:text-slate-300 flex">Business name <p className='text-red-700'>*</p></span>
                 <input
+                name='bName'
                   type="text"
                   placeholder="Reel Style Kitchen"
                   className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-slate-400 focus:ring-2 focus:ring-slate-200 dark:border-slate-700 dark:bg-slate-900 dark:focus:border-slate-500 dark:focus:ring-slate-800"
@@ -31,6 +52,7 @@ export const PartnerRegister = () => {
               <label className="flex flex-col gap-2">
                 <span className="text-sm font-medium text-slate-600 dark:text-slate-300 flex">Business email <p className='text-red-700'>*</p></span>
                 <input
+                name='mail'
                   type="email"
                   placeholder="contact@yourkitchen.com"
                   className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-slate-400 focus:ring-2 focus:ring-slate-200 dark:border-slate-700 dark:bg-slate-900 dark:focus:border-slate-500 dark:focus:ring-slate-800"
@@ -51,6 +73,7 @@ export const PartnerRegister = () => {
               <label className="flex flex-col gap-2">
                 <span className="text-sm font-medium text-slate-600 dark:text-slate-300">Phone number</span>
                 <input
+                name='phone'
                   type="tel"
                   placeholder="+1 123 456 7890"
                   className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-slate-400 focus:ring-2 focus:ring-slate-200 dark:border-slate-700 dark:bg-slate-900 dark:focus:border-slate-500 dark:focus:ring-slate-800"
@@ -61,6 +84,7 @@ export const PartnerRegister = () => {
             <label className="flex flex-col gap-2">
               <span className="text-sm font-medium text-slate-600 dark:text-slate-300">Business address</span>
               <textarea
+              name='address'
                 rows={3}
                 placeholder="Street, City, ZIP"
                 className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-slate-400 focus:ring-2 focus:ring-slate-200 dark:border-slate-700 dark:bg-slate-900 dark:focus:border-slate-500 dark:focus:ring-slate-800"
@@ -80,6 +104,7 @@ export const PartnerRegister = () => {
               <label className="flex flex-col gap-2">
                 <span className="text-sm font-medium text-slate-600 dark:text-slate-300">Website or menu link</span>
                 <input
+                name='webLink'
                   type="url"
                   placeholder="https://"
                   className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-slate-400 focus:ring-2 focus:ring-slate-200 dark:border-slate-700 dark:bg-slate-900 dark:focus:border-slate-500 dark:focus:ring-slate-800"
@@ -97,7 +122,6 @@ export const PartnerRegister = () => {
             </label>
 
             <button
-              onSubmit={()=>(partnerRegister())}
               type="submit"
               className="w-full rounded-2xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-300 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white dark:focus:ring-slate-600"
             >
