@@ -10,7 +10,7 @@ export const PartnerLogin = () => {
     const email = targt.mail.value;
     const password = targt.password.value;
 
-    const response = await axios.post("",{
+    const response = await axios.post("http://localhost:3000/api/auth/partner/login",{
       email,
       password
     },
