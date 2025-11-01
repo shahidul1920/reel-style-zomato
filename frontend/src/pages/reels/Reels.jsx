@@ -86,6 +86,7 @@ export default function Reels() {
               playsInline
               muted
               loop
+              autoPlay
             />
 
             {/* gradient to help text contrast */}
