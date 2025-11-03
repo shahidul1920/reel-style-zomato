@@ -8,6 +8,7 @@ import Header from '../components/Header'
 import { Home } from '../pages/home/Home'
 import Support from '../pages/support/Support'
 import Reels from '../pages/reels/Reels'
+import { Partner } from '../pages/store/Partner'
 
 export const AppRoutes = () => {
   return (
@@ -21,6 +22,7 @@ export const AppRoutes = () => {
             <Route path='/home' element={<Home />} />
             <Route path='/support' element={<Support />} />
             <Route path='/reel' element={<Reels />} />
+            <Route path='/partner-store' element={<Partner />} />
         </Routes>
     </Router>
   )
