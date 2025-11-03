@@ -1,6 +1,6 @@
 const express = require('express');
 const { authUserMiddleware } = require('../middlewares/auth.middleware');
-const foodPartnerModel = require('../models/foodpartner.model');
+const foodPartnerController = require('../controllers/foodPartner.controller');
 
 const router = express.Router()
 

@@ -16,3 +16,7 @@ const getFoodPartnerById = async (req, res)=>{
         foodPartner
     })
 }
+
+module.exports = {
+    getFoodPartnerById
+}
