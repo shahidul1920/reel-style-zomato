@@ -44,29 +44,25 @@ export const Partner = () => {
           <div className="md:col-span-2 space-y-6">
             <section className="rounded-2xl border border-slate-200/80 bg-white/80 p-4 dark:border-slate-800/70 dark:bg-slate-900/60">
               <div className="flex items-center justify-between">
-                <h2 className="text-lg font-semibold">Menu & Reels</h2>
-                <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
-                  <button className="px-3 py-1 rounded-full bg-slate-50 dark:bg-slate-800">Menu</button>
-                  <button className="px-3 py-1 rounded-full">Reels</button>
-                  <button className="px-3 py-1 rounded-full">Reviews</button>
-                </div>
+                <h2 className="text-lg font-semibold">Reels</h2>
               </div>
 
               <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3">
-                {/* sample items - replace src and text with real data */}
+                {/* sample reels - replace src and text with real data */}
                 {[1, 2, 3, 4, 5, 6].map((i) => (
-                  <div key={i} className="overflow-hidden rounded-2xl border border-slate-200/70 bg-white p-2 text-sm dark:border-slate-800/60 dark:bg-slate-900/50">
-                    <div className="h-44 w-full overflow-hidden rounded-lg bg-slate-200">
-                      <img src={`https://images.unsplash.com/photo-1543352634-7f3b2c3b9f3a?auto=format&fit=crop&w=800&q=60`} alt="food" className="h-full w-full object-cover" />
-                    </div>
-                    <div className="mt-2 flex items-center justify-between">
-                      <div>
-                        <h3 className="font-medium">Chef's Special {i}</h3>
-                        <p className="text-xs text-slate-500 dark:text-slate-400">$ {8 + i}</p>
+                  <article key={i} className="relative overflow-hidden rounded-2xl border border-slate-200/70 bg-white p-0 text-sm dark:border-slate-800/60 dark:bg-slate-900/50">
+                    <div className="relative h-44 w-full overflow-hidden rounded-t-lg bg-slate-200">
+                      <img src={`https://images.unsplash.com/photo-1543352634-7f3b2c3b9f3a?auto=format&fit=crop&w=800&q=60`} alt={`reel ${i}`} className="h-full w-full object-cover" />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <span className="h-12 w-12 rounded-full bg-white/90 text-slate-900 flex items-center justify-center drop-shadow-md">▶</span>
                       </div>
-                      <button className="rounded-full bg-slate-900 px-3 py-1 text-xs font-semibold text-white dark:bg-slate-100 dark:text-slate-900">View</button>
                     </div>
-                  </div>
+
+                    <div className="p-3">
+                      <h3 className="font-medium text-sm line-clamp-2">Behind the scenes — Reel {i}</h3>
+                      <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">Quick look at how this dish comes together — watch for the final reveal.</p>
+                    </div>
+                  </article>
                 ))}
               </div>
             </section>
