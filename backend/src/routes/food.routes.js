@@ -16,10 +16,7 @@ router.get("/",
     foodController.getFoodItems
 )
 
-router.get("/partner-store/:id",
-    authfoodMiddleware.authUserMiddleware,
-    foodController.getFoodPartnerById
-)
+
 
 
 module.exports = router
