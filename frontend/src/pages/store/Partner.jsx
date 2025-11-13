@@ -1,6 +1,15 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
+import { useParams } from 'react-router-dom'
 
 export const Partner = () => {
+  const {id} = useParams()
+  const [profile, setProfile] = useState(null)
+
+  useEffect(()=>{
+    axios.get(`http://localhost:3000/api/partner-store/${id}`)
+  })
+
   return (
     <main className="min-h-screen bg-slate-100 text-slate-900 transition-colors dark:bg-slate-950 dark:text-slate-100">
       <div className="mx-auto max-w-5xl px-6 py-12">

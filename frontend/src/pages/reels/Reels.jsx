@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 // const SAMPLE_REELS = [
 //   {
@@ -70,6 +71,7 @@ export default function Reels() {
   },[])
 
   console.log(videos);
+
   
 
   return (
@@ -98,12 +100,15 @@ export default function Reels() {
                 {item.title}
               </p>
 
-              <a
+              {/* <a
                 href={item.store}
                 className="inline-flex items-center gap-2 rounded-full bg-white/95 px-4 py-2 text-sm font-semibold text-slate-900 shadow-sm transition hover:scale-105"
               >
                 Visit store
-              </a>
+              </a> */}
+              <Link to={`/partner-store/${item.foodPartner}`} className="inline-flex items-center gap-2 rounded-full bg-white/95 px-4 py-2 text-sm font-semibold text-slate-900 shadow-sm transition hover:scale-105">
+                Visit store
+              </Link>
             </div>
 
             {/* Small hint/footer area (bottom) - left empty for now */}
