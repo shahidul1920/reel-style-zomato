@@ -7,8 +7,14 @@ export const Partner = () => {
   const [profile, setProfile] = useState(null)
 
   useEffect(()=>{
-    axios.get(`http://localhost:3000/api/partner-store/${id}`)
-  })
+    axios.get(`http://localhost:3000/api/partner-store/${id}`, {withCredentials: true})
+    .then(response => {
+      setProfile(response.data.foodPartner)
+      
+    })
+  },[id])
+  console.log(profile);
+  
 
   return (
     <main className="min-h-screen bg-slate-100 text-slate-900 transition-colors dark:bg-slate-950 dark:text-slate-100">
@@ -29,7 +35,7 @@ export const Partner = () => {
               </div>
 
               <div className="flex-1 text-center md:text-left">
-                <h1 className="text-2xl font-semibold">Reel Style Kitchen</h1>
+                <h1 className="text-2xl font-semibold">{profile?.name}</h1>
                 <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">Fusion · Vegan · Desserts — New on the platform</p>
 
                 <div className="mt-3 flex items-center justify-center md:justify-start gap-3">
