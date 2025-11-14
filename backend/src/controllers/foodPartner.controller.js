@@ -1,5 +1,5 @@
 const foodModel = require('../models/food.model');
-const foodPartnerModel = require('../models/food.model');
+const foodPartnerModel = require('../models/foodpartner.model');
 
 const getFoodPartnerById = async (req, res)=>{
     const foodPartnerId = req.params.id;

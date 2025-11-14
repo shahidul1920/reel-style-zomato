@@ -106,7 +106,7 @@ export default function Reels() {
               >
                 Visit store
               </a> */}
-              <Link to={`/partner-store/${item._id}`} className="inline-flex items-center gap-2 rounded-full bg-white/95 px-4 py-2 text-sm font-semibold text-slate-900 shadow-sm transition hover:scale-105">
+              <Link to={`/partner-store/${item.foodPartner}`} className="inline-flex items-center gap-2 rounded-full bg-white/95 px-4 py-2 text-sm font-semibold text-slate-900 shadow-sm transition hover:scale-105">
                 Visit store
               </Link>
             </div>
